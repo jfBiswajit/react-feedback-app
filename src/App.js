@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FeedbackForm from './components/FeedbackForm.jsx';
 import FeedbackList from './components/FeedbackList.jsx';
 import FeedbackStats from './components/FeedbackStats.jsx';
 import Header from './components/Header.jsx';
@@ -14,11 +15,14 @@ function App() {
   };
 
   return (
-    <div className='container'>
+    <>
       <Header />
-      <FeedbackStats feedback={feedback} />
-      <FeedbackList handleDelete={deleteFeedback} feedback={feedback} />
-    </div>
+      <div className='container'>
+        <FeedbackForm />
+        <FeedbackStats feedback={feedback} />
+        <FeedbackList handleDelete={deleteFeedback} feedback={feedback} />
+      </div>
+    </>
   );
 }
 
