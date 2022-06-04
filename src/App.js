@@ -1,7 +1,11 @@
+import FeedbackItem from './components/FeedbackItem.jsx';
+import Header from './components/Header.jsx';
+
 function App() {
   return (
     <div className='container'>
-      <h1>My App</h1>
+      <Header text='provided' />
+      <FeedbackItem/>
     </div>
   );
 }
