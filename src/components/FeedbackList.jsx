@@ -1,14 +1,14 @@
 import FeedbackItem from './FeedbackItem';
 
-function FeedbackList({ feedback }) {
+function FeedbackList({ feedback, handleDelete }) {
   let content = <p>No feedback yet.</p>;
 
   if (feedback.length) {
     content = feedback.map((feedbackItem) => (
       <FeedbackItem
         key={feedbackItem.id}
-        text={feedbackItem.text}
-        rating={feedbackItem.rating}
+        item={feedbackItem}
+        handleDelete={handleDelete}
       />
     ));
   }

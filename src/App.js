@@ -6,10 +6,16 @@ import feedbackData from './data/FeedbackData';
 function App() {
   const [feedback, setFeedback] = useState(feedbackData);
   
+  const deleteFeedback = (id) => {
+      if (window.confirm('Are you sure you want to delete?')) {
+        setFeedback(feedback.filter(item => item.id !== id));
+      }
+  }
+  
   return (
     <div className='container'>
       <Header />
-      <FeedbackList feedback={feedback} />
+      <FeedbackList handleDelete={deleteFeedback} feedback={feedback} />
     </div>
   );
 }
