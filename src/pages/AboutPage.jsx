@@ -1,19 +1,20 @@
-import { Link } from 'react-router-dom';
-import Card from '../components/shared/Card';
+import { Link } from 'react-router-dom'
+import Card from '../components/shared/Card'
 
-function AboutPage() {
+function AboutPage(props) {
   return (
     <Card>
-      <h1>About This Project</h1>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum in hic
-        possimus voluptas eligendi culpa odio laborum voluptatum eum provident!
-      </p>
-      <p>Version: 1.0.0</p>
-      <p>
-        <Link to='/'>Back to Home</Link>
-      </p>
+      <div className='about'>
+        <h1>About This Project</h1>
+        <p>This is a React app to leave feedback for a product or service</p>
+        <p>Version: 1.0.0</p>
+
+        <p>
+          <Link to='/'>Back To Home</Link>
+        </p>
+      </div>
     </Card>
-  );
+  )
 }
-export default AboutPage;
+
+export default AboutPage

@@ -1,19 +1,15 @@
-import { useContext, useEffect, useState } from 'react';
-import FeedbackContext from '../context/FeedbackContext';
-
-function RatingSelect({ select }) {
-  const [selected, setSelected] = useState(10);
-
-  const { feedbackEdit } = useContext(FeedbackContext);
-
-  useEffect(() => {
-      setSelected(feedbackEdit.item.rating)
-  }, [feedbackEdit]);
+function RatingSelect({ select, selected }) {
+  // NOTE: We don't need local state here as it's a duplicate of parent state
+  // also no real need for useEffect or context
+  // useEffect(() => {
+  //   select(feedbackEdit.item.rating)
+  // }, [feedbackEdit])
 
   const handleChange = (e) => {
-    select(+e.currentTarget.value);
-  };
+    select(+e.currentTarget.value)
+  }
 
+  // NOTE: simplified with iteration
   return (
     <ul className='rating'>
       {Array.from({ length: 10 }, (_, i) => (
@@ -30,7 +26,7 @@ function RatingSelect({ select }) {
         </li>
       ))}
     </ul>
-  );
+  )
 }
 
-export default RatingSelect;
+export default RatingSelect
